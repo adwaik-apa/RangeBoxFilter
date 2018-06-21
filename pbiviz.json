@@ -1,0 +1,27 @@
+{
+  "visual": {
+    "name": "rangeBoxFilter",
+    "displayName": "Range Box Filter",
+    "guid": "rangeBoxFilter3DF036EDB6E14E6AAAEF29FB45A6F8D3",
+    "visualClassName": "Visual",
+    "version": "1.0.0",
+    "description": "Power Bi Range Filter",
+    "supportUrl": "https://github.com/adwaik-apa/RangeBoxFilter/issues",
+    "gitHubUrl": "https://github.com/adwaik-apa/RangeBoxFilter"
+  },
+  "apiVersion": "1.12.0",
+  "author": {
+    "name": "a.dwaik",
+    "email": "adwaik@apa.org"
+  },
+  "assets": {
+    "icon": "assets/icon.png"
+  },
+  "externalJS": [
+    "node_modules/powerbi-visuals-utils-dataviewutils/lib/index.js"
+  ],
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json",
+  "dependencies": "dependencies.json",
+  "stringResources": []
+}

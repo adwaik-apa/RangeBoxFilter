@@ -1,0 +1,163 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "Data",
+            "name": "category",
+            "kind": "Grouping"
+        }
+    ],
+    "objects": {
+        "Format":{
+            "displayName": "Format",
+            "properties": {
+                "DateFormat":{
+                    "displayName": "Date Format",
+                    "type": {
+                        "enumeration": [
+                          {
+                              "displayName": "Month & Year (M-YYYY)",
+                              "value": "M-Y"
+                          },
+                          {
+                              "displayName": "Month Name & Year (MMMM-YYYY)",
+                              "value": "MN-Y"
+                          }
+                          ,
+                          {
+                              "displayName": "Day,Month & Year (D-M-YYYY)",
+                              "value": "D-M-Y"
+                          },
+                          {
+                            "displayName": "Day,Month Name & Year (D-MMMM-YYYY)",
+                            "value": "D-MN-Y"
+                          },
+                          {
+                              "displayName": "Year Only",
+                              "value": "Y"
+                          }
+                        ]
+                    }
+                },
+                "Seperator":{
+                    "displayName": "Seperator",
+                    "type": {
+                        "text": true
+                    }
+                }
+            }
+        },
+        "dataPoint": {
+            "displayName": "Style",
+            "properties": {
+                "startTitle":{
+                    "displayName": "Start Title",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "endTitle":
+                {
+                    "displayName": "End Title",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "fontSize":{
+                    "displayName": "Font Size",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                },
+                "boxBackground":{
+                    "displayName": "Box Background",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color":true
+                            }
+                        }
+                    }
+                },
+                "boxTextColor":{
+                    "displayName": "Box Text Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color":true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "general":{
+            "displayName": "General",
+            "properties": {
+                "filter":{
+                    "type": {
+                        "filter":true
+                    }
+                },
+                "indexFrom":{
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "indexTo":
+                {
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "queryName":{
+                    "type": {
+                        "text": true
+                    }
+                }
+            }
+        }
+    },
+    "dataViewMappings": [
+    {
+            "conditions": [
+                {
+                    "category":{
+                        "max": 1
+                    }
+                }
+            ],
+            "categorical": {
+                "categories": {
+                    "for": {
+                        "in": "category"
+                    },
+                    "dataReductionAlgorithm": {
+                        "top": {}
+                    }
+                },
+                "values": {
+                    "select": [
+                        {
+                            "bind": {
+                                "to": "measure"
+                            }
+                        }
+                    ]
+                }
+            }
+        }        
+    ],
+    "sorting": {
+        "implicit": {
+            "clauses": [
+                {
+                   "role": "category",
+                   "direction": 1 
+                }
+            ]
+        }
+    }
+
+}
